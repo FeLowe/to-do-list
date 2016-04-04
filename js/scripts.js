@@ -1,29 +1,36 @@
-function Place(name, landmark, time) {
+function Chore(name, choreDone, ChoreNotDone) {
   this.nameKey = name;
-  this.landKey = landmark;
-  this.timeKey = time;
+  this.doneKey = choreDone;
+  this.notDoneKey = ChoreNotDone;
 }
 
 
 
 $(document).ready(function(){
-  $(".places").submit(function(event){
+  $(".list").submit(function(event){
     event.preventDefault();
 
-    var placeInput = $("#placeName").val();
-    var landmarkInput = $("#landmarks").val();
-    var timeInput = $("#time").val();
+    var choreInput = $("#choreName").val();
+  console.log(choreInput);
 
-    var newPlace = new Place(placeInput, landmarkInput, timeInput);
+    var newChore = new Chore(choreInput);
 
-     $("ul#place").append("<li class='place'>" + newPlace.nameKey + "</li>");
-     console.log(newPlace);
+     $("#list").append("<li class='chore'>" + newChore.nameKey + "</li>");
 
-     $(".place").last().click(function() {
-  $("#show-place").show();
-  $("#show-place h2").text(newPlace.nameKey);
-  $(".landmark").text(newPlace.landKey);
-  $(".time").text(newPlace.timeKey);
+
+     $(".chore").last().click(function() {
+  $("#show-list").show();
+  $("#show-list h2").text(newChore.nameKey);
+  $("#choreStatus").submit(function(event){
+    event.preventDefault();
+
+    var choreStatus = $("#done").val();
+    if(choreStatus === "done") {
+      newChore.doneKey = "done";
+      $(".chore").append("<p>" + newChore.doneKey + "</p>");
+    }
+  });
+
   });
 
   });

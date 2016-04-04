@@ -1,12 +1,12 @@
-#show-place {
+#show-list {
   display: none;
 }
 
-#place {
+.chore {
   cursor: pointer;
   color: #0088cc;
 }
 
-#place:hover {
+.chore:hover {
   text-decoration: underline;
 }

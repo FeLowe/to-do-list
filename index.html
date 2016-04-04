@@ -11,39 +11,33 @@
   </head>
   <body>
     <div class="container">
-      <h2>Places I have been to</h2>
-      <form class="places">
+      <h2>List of things to do:</h2>
+      <form class="list">
         <ul>
           <li>
-            <label>Input a place you have been:
-              <input id = "placeName" type="text">
+            <label>Enter a chore:
+              <input id = "choreName" type="text">
             </label>
           </li>
-          <li>
-            <label>Give me a landmark:
-              <input id = "landmarks" type="text">
-            </label>
-          </li>
-          <li>
-            <label>Give me a time:
-              <input id = "time" type="text">
-            </label>
-          </li>
+
         </ul>
-        <button type="submit">Submit</button>
+        <button type="submit">Add chore</button>
       </form>
 
-      <div id="show-place">
-          <h2></h2>
+      <div id="show-list">
+        <h2></h2>
+        <form id="choreStatus">
+        <label>Chores Done?</label>
+          <input type="text" id = "done">
+          <button type="submit">Submit</button>
+          <ul class = "choreDone">
 
-          <p>Landmark: <span class="landmark"></span></p>
-          <p>Time: <span class="time"></span></p>
+          </ul>
+        </form>
         </div>
-        
-          <ul id="place">
+
+          <ul id="list">
           </ul>
     </div>
-
-
   </body>
 </html>
